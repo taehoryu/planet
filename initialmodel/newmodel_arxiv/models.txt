@@ -1,0 +1,16 @@
+newmodelcpp_7.hse :  Td = 1500.0, T_char = 250.0,  grav = -1.0e3,  den_top=1.e-9,  z_top=1.0e8, number_cell=128.0,  dP_factor=1.e7,  dP_factor_max=1.e12,  dP_factor_min=1.e9,  cell_factor=1.e16  : error =10^-12
+
+
+newmodelcpp_8.hse :  Td = 1500.0, T_char = 250.0,  grav = -1.0e3,  den_top=1.e-9,  z_top=1.0e8, number_cell=512.0,  dP_factor=1.e7,  dP_factor_max=1.e12,  dP_factor_min=1.e9,  cell_factor=1.e16
+
+
+newmodelcpp_9.hse :  Td = 1500.0, T_char = 250.0,  grav = -1.0e3,  den_top=1.e-8,  z_top=1.0e8, number_cell=512.0*8,  dP_factor=1.e7,  dP_factor_max=1.e12,  dP_factor_min=1.e10,  cell_factor=1.e16 : error =10^-12
+
+
+newmodelcpp_10.hse :  Td = 1500.0, T_char = 250.0,  grav = -1.0e3,  den_top=1.e-8,  z_top=1.0e9, number_cell=512.0*4,  dP_factor=1.e7,  dP_factor_max=1.e12,  dP_factor_min=1.e9,  cell_factor=1.e16 : error =10^-5-10^-7
+
+newmodelcpp_11.hse :  Td = 1500.0, T_char = 250.0,  grav = -1.0e3,  den_top=1.e-9,  z_top=1.0e10, number_cell=512.0*4,  dP_factor=1.e7,  dP_factor_max=1.e12,  dP_factor_min=1.e9,  cell_factor=1.e16
+
+newmodelcpp_12.hse :  Td = 1500.0, T_char = 250.0,  grav = -1.0e3,  den_top=1.e-9,  z_top=1.0e10, number_cell=512.0*16,  dP_factor=1.e7,  dP_factor_max=1.e12,  dP_factor_min=1.e9,  cell_factor=1.e16
+
+
