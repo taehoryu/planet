@@ -202,7 +202,7 @@ contains
 
                          endif
                       endif
-                      adv(i,j,UMY) = min(ZERO, adv(i,domlo(2),UMY))
+                      adv(i,j,UMY) = min(ZERO, adv(i,j,UMY))
                       eos_state%rho = dens_zone
                       eos_state%T = temp_zone
                       eos_state%xn(:) = X_zone
@@ -263,7 +263,7 @@ contains
                       adv(i,j,URHO) = dens_zone
                       adv(i,j,UEINT) = dens_zone*eint
                       adv(i,j,UEDEN) = dens_zone*eint + &
-                           HALF*sum(adv(i,j,UMX:UMZ)**2)*dens_zone
+                           HALF*sum(adv(i,j,UMX:UMZ)**2.0_rt)/dens_zone
                       adv(i,j,UTEMP) = temp_zone
                       adv(i,j,UFS:UFS-1+nspec) = dens_zone*X_zone(:)
                    endif
