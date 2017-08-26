@@ -141,7 +141,7 @@ contains
                ! adv(i,j,UMX) = min(ZERO,dens_zone*(adv(i,domlo(2),UMX)/adv(i,domlo(2),URHO)))
                 adv(i,j,UMY) = min(ZERO,dens_zone*(adv(i,domlo(2),UMY)/adv(i,domlo(2),URHO)))
              endif
-           
+              adv(i,j,UMX) = ZERO
              adv(i,j,URHO) = dens_zone
              adv(i,j,UEINT) = dens_zone*eos_state%e
              adv(i,j,UEDEN) = dens_zone*eos_state%e + & 
@@ -210,7 +210,7 @@ contains
      
    ! end do
 
-!print *, 'upper(rho)', (adv((adv_l1+adv_h1)/2.0,j,URHO),j=domhi(2),adv_h2)
+print *, 'upper(rho)', (adv((adv_l1+adv_h1)/2.0,j,URHO),j=adv_l2,adv_h2)
 !print *, 'lower(rho)', (adv((adv_l1+adv_h1)/2.0,j,URHO),j=adv_l2,domlo(2))
 
   end subroutine ca_hypfill
@@ -280,13 +280,13 @@ contains
     ! our lower boundary is inflow, so we need to make sure the
     ! gravitational acceleration is set correctly there
     !     YLO
-!    if ( bc(2,1,1).eq.EXT_DIR .and. grav_l2.lt.domlo(2)) then
-!       do j=grav_l2,domlo(2)-1
-!          do i=grav_l1,grav_h1
-!             grav(i,j) = 0.0
-!          end do
-!       end do
-!    end if
+    if ( bc(2,1,1).eq.EXT_DIR .and. grav_l2.lt.domlo(2)) then
+       do j=grav_l2,domlo(2)-1
+          do i=grav_l1,grav_h1
+             grav(i,j) = 0.0
+          end do
+       end do
+    end if
 
   end subroutine ca_gravxfill
 
@@ -312,13 +312,13 @@ contains
     ! our lower boundary is inflow, so we need to make sure the
     ! gravitational acceleration is set correctly there
     !     YLO
-!    if ( bc(2,1,1).eq.EXT_DIR .and. grav_l2.lt.domlo(2)) then
-!       do j=grav_l2,domlo(2)-1
-!          do i=grav_l1,grav_h1
-!             grav(i,j) = const_grav
-!          end do
-!       end do
-!    end if
+    if ( bc(2,1,1).eq.EXT_DIR .and. grav_l2.lt.domlo(2)) then
+       do j=grav_l2,domlo(2)-1
+          do i=grav_l1,grav_h1
+             grav(i,j) = const_grav
+          end do
+       end do
+    end if
 
   end subroutine ca_gravyfill
 
@@ -344,13 +344,13 @@ contains
     ! our lower boundary is inflow, so we need to make sure the
     ! gravitational acceleration is set correctly there
     !     YLO
-!    if ( bc(2,1,1).eq.EXT_DIR .and. grav_l2.lt.domlo(2)) then
-!       do j=grav_l2,domlo(2)-1
-!          do i=grav_l1,grav_h1
-!             grav(i,j) = 0.0
-!          end do
-!       end do
-!    end if
+    if ( bc(2,1,1).eq.EXT_DIR .and. grav_l2.lt.domlo(2)) then
+       do j=grav_l2,domlo(2)-1
+          do i=grav_l1,grav_h1
+             grav(i,j) = 0.0
+          end do
+       end do
+    end if
 
   end subroutine ca_gravzfill
 
